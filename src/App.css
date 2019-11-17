@@ -42,3 +42,9 @@
   display: table;
   clear: both;
 }
+
+.raiting {
+width: 90px;
+margin: 5px;
+float: none;
+}

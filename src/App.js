@@ -6,10 +6,7 @@ import {v4} from 'uuid'
 
 
 class App extends Component {
-
-    constructor(props) {
-        super(props)
-        this.state = {
+        state = {
             colors: [
                 {
                     "id": "0175d1f0-a8c6-41bf-8d02-df5734d829a4",
@@ -31,13 +28,10 @@ class App extends Component {
                 }
             ]
         }
-        this.addColor = this.addColor.bind(this)
-        this.rateColor = this.rateColor.bind(this)
-        this.removeColor = this.removeColor.bind(this)
-    }
 
-    addColor(title, color) {
-        const colors = [
+
+    addColor=(title, color) => {
+       const  colors = [
             ...this.state.colors,
             {
                 id: v4(),
@@ -47,9 +41,11 @@ class App extends Component {
             }
         ]
         this.setState({colors})
-    }
+  }
 
-    rateColor(id, rating) {
+
+
+    rateColor=(id, rating) => {
         const colors = this.state.colors.map(color =>
             (color.id !== id) ?
                 color :
@@ -59,14 +55,16 @@ class App extends Component {
                 }
         )
         this.setState({colors})
-    }
+   }
 
-    removeColor(id) {
+
+
+    removeColor=(id) => {
         const colors = this.state.colors.filter(
             color => color.id !== id
         )
         this.setState({colors})
-    }
+        }
 
   render() {
       const { addColor, rateColor, removeColor } = this

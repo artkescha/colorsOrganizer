@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const AddColorForm = ({onNewColor=f=>f}) => {
     let _title, _color
